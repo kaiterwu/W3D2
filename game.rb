@@ -14,7 +14,7 @@ class Game
         
         end 
 
-        puts "You win! "
+        return "You win! "
      end 
 
 end 

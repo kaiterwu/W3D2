@@ -1,9 +1,20 @@
-require_relative "board,card"
+require_relative "board"
+require_relative "card"
 
 class Game 
-    def play 
-        @board.render
-         input = gets.chomp
+
+    def initialize(size=4)
+        @board = Board.new(size)
     end 
+
+    def play 
+        @board.populate 
+        while !@board.won?
+            @board.guess_check 
+        
+        end 
+
+        puts "You win! "
+     end 
 
 end 
